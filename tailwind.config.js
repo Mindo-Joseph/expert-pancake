@@ -7,6 +7,11 @@ module.exports = {
   theme: {
     extend: {},
   },
+  utilities: {
+    flex: {
+
+    }
+  },
   plugins: [
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
