@@ -5,10 +5,10 @@ databases:
 
 services:
   - type: web
-    name: sample_app
+    name: rails
     env: ruby
     buildCommand: "./bin/render-build.sh"
-    startCommand: "bundle exec puma -C config/puma.rb"
+    startCommand: "bundle exec ./bin/dev"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
@@ -16,5 +16,10 @@ services:
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
+  - type: redis
+    name: redis
+    plan: free
+    
+
 
 
