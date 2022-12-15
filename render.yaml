@@ -1,11 +1,13 @@
 databases:
-  - name: sample_app
+  - name: postgres
+    plan: free
     databaseName: sample_app_development
     user: sample_app
 
 services:
   - type: web
     name: rails
+    plan: free
     env: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec ./bin/dev"
